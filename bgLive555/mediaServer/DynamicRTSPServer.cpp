@@ -72,6 +72,8 @@ ServerMediaSession* DynamicRTSPServer
     } 
 
     if (sms == NULL) {
+		// 这里其实很重要，在这个地方其实已经做了解复用，然后将视频流、音频流、文本流作为Session做成链表组织起来
+		// 后面进行处理发流
       sms = createNewSMS(envir(), streamName, fid); 
       addServerMediaSession(sms);
     }

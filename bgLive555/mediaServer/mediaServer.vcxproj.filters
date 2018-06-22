@@ -25,5 +25,13 @@
     <ClCompile Include="live555MediaServer.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GxxGmRTSPServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GxxGmRTSPServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

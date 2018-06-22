@@ -160,7 +160,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DynamicRTSPServer.cpp" />
+    <ClCompile Include="GxxGmRTSPServer.cpp" />
     <ClCompile Include="live555MediaServer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GxxGmRTSPServer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
