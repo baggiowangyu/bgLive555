@@ -47,10 +47,10 @@ private:
   virtual void doGetNextFrame();
 
 private:
-  unsigned fSamplingFrequency;
-  unsigned fNumChannels;
-  unsigned fuSecsPerFrame;
-  char fConfigStr[5];
+  unsigned fSamplingFrequency;	// 采样率
+  unsigned fNumChannels;		// 声道数
+  unsigned fuSecsPerFrame;		// 帧率
+  char fConfigStr[5];			// 配置字符串，这里的作用不是很清楚，后面再分析
 };
 
 #endif

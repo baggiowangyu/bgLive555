@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HashTable">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="HashTable::Iterator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>include\HashTable.hh</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAJAAAAgAAAAAAAAAAAAJAAAAAAAAAKBBABAAAAAAAA=</HashCode>
+      <FileName>include\HashTable.hh</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UsageEnvironment">
+    <Position X="4" Y="0.5" Width="2.25" />
+    <NestedTypes>
+      <Typedef Name="UsageEnvironment::MsgString" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>include\UsageEnvironment.hh</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAgAACAAAQQAAAAgABSAAAAAIIIAAAAAAAAAAAIgAUA=</HashCode>
+      <FileName>include\UsageEnvironment.hh</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaskScheduler">
+    <Position X="6.5" Y="0.5" Width="2.75" />
+    <NestedTypes>
+      <Typedef Name="TaskScheduler::BackgroundHandlerProc" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>include\UsageEnvironment.hh</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAApAAIAAAAAgAAgAgAALAAQAQIFAAAAAAAAAAA=</HashCode>
+      <FileName>include\UsageEnvironment.hh</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="Boolean" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\boolean.hh</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TaskFunc" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\UsageEnvironment.hh</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="TaskToken" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\UsageEnvironment.hh</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="EventTriggerId" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\UsageEnvironment.hh</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

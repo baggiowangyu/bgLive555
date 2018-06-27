@@ -16,6 +16,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="include\BasicHashTable.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\BasicUsageEnvironment.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\BasicUsageEnvironment_version.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\BasicUsageEnvironment0.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\DelayQueue.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\HandlerSet.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BasicHashTable.cpp">

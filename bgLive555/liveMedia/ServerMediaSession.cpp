@@ -233,6 +233,8 @@ char* ServerMediaSession::generateSDPDescription() {
     // Count the lengths of each subsession's media-level SDP lines.
     // (We do this first, because the call to "subsession->sdpLines()"
     // causes correct subsession 'duration()'s to be calculated later.)
+	// 计算每个子会话的media-level SDP长度；
+	// 我们先做这一步，因为调用"subsession->sdpLines()"能导致后面能获得正确的'duration()'返回值
     unsigned sdpLength = 0;
     ServerMediaSubsession* subsession;
     for (subsession = fSubsessionsHead; subsession != NULL;

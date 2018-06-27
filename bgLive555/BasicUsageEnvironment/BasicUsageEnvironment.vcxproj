@@ -143,6 +143,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="include\BasicHashTable.hh" />
+    <None Include="include\BasicUsageEnvironment.hh" />
+    <None Include="include\BasicUsageEnvironment0.hh" />
+    <None Include="include\BasicUsageEnvironment_version.hh" />
+    <None Include="include\DelayQueue.hh" />
+    <None Include="include\HandlerSet.hh" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

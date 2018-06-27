@@ -143,6 +143,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="include\Boolean.hh" />
+    <None Include="include\HashTable.hh" />
+    <None Include="include\strDup.hh" />
+    <None Include="include\UsageEnvironment.hh" />
+    <None Include="include\UsageEnvironment_version.hh" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

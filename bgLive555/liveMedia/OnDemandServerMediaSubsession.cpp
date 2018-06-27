@@ -62,9 +62,11 @@ OnDemandServerMediaSubsession::sdpLines() {
     // subsession (as a unicast stream).  To do so, we first create
     // dummy (unused) source and "RTPSink" objects,
     // whose parameters we use for the SDP lines:
+	// 我们需要构造一组SDP描述符来描述这个（作为单播流的）子会话
+	// 要这样做，我们首先按照SDP描述来创建假的（未被使用）的源和RTP通道对象
     unsigned estBitrate;
-    FramedSource* inputSource = createNewStreamSource(0, estBitrate);
-    if (inputSource == NULL) return NULL; // file not found
+    FramedSource* inputSource = createNewStreamSource(0, estBitrate);	// 这里会得到媒体文件解复用后的一些参数
+    if (inputSource == NULL) return NULL; // file not found（文件未发现）
 
     struct in_addr dummyAddr;
     dummyAddr.s_addr = 0;

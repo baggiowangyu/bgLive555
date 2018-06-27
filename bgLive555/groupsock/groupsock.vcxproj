@@ -143,6 +143,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="include\GroupEId.hh" />
+    <None Include="include\Groupsock.hh" />
+    <None Include="include\GroupsockHelper.hh" />
+    <None Include="include\groupsock_version.hh" />
+    <None Include="include\IOHandlers.hh" />
+    <None Include="include\NetAddress.hh" />
+    <None Include="include\NetInterface.hh" />
+    <None Include="include\TunnelEncaps.hh" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +162,9 @@
     <ClCompile Include="IOHandlers.cpp" />
     <ClCompile Include="NetAddress.cpp" />
     <ClCompile Include="NetInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\NetCommon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

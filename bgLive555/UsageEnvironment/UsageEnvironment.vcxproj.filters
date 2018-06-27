@@ -16,6 +16,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="include\Boolean.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\HashTable.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\strDup.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\UsageEnvironment.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\UsageEnvironment_version.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HashTable.cpp">

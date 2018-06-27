@@ -95,12 +95,14 @@ ADTSAudioFileSource
 ::ADTSAudioFileSource(UsageEnvironment& env, FILE* fid, u_int8_t profile,
 		      u_int8_t samplingFrequencyIndex, u_int8_t channelConfiguration)
   : FramedFileSource(env, fid) {
-  fSamplingFrequency = samplingFrequencyTable[samplingFrequencyIndex];
-  fNumChannels = channelConfiguration == 0 ? 2 : channelConfiguration;
+  // 在这里确认一些基本参数
+  fSamplingFrequency = samplingFrequencyTable[samplingFrequencyIndex];		// 采样率
+  fNumChannels = channelConfiguration == 0 ? 2 : channelConfiguration;		// 声道数
   fuSecsPerFrame
-    = (1024/*samples-per-frame*/*1000000) / fSamplingFrequency/*samples-per-second*/;
+    = (1024/*samples-per-frame*/*1000000) / fSamplingFrequency/*samples-per-second*/;	// 帧率
 
   // Construct the 'AudioSpecificConfig', and from it, the corresponding ASCII string:
+  // 这里的一些配置参数让人不太摸得到头脑
   unsigned char audioSpecificConfig[2];
   u_int8_t const audioObjectType = profile + 1;
   audioSpecificConfig[0] = (audioObjectType<<3) | (samplingFrequencyIndex>>1);

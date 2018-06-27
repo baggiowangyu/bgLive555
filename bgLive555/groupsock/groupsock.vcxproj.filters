@@ -16,6 +16,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="include\GroupEId.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\Groupsock.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\groupsock_version.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\GroupsockHelper.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\IOHandlers.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\NetAddress.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\NetInterface.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="include\TunnelEncaps.hh">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="inet.c">
@@ -39,5 +64,10 @@
     <ClCompile Include="NetInterface.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\NetCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

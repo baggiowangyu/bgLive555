@@ -118,6 +118,18 @@ static void onOggDemuxCreation(OggFileServerDemux* newDemux, void* clientData) {
 	sms = ServerMediaSession::createNew(env, fileName, fileName, descStr);\
 } while(0)
 
+void func_NEW_SMS(ServerMediaSession **sms, const char *description, UsageEnvironment& env, char const* fileName)
+{
+	do
+	{
+		char descStr[4096] = {0};
+		strcpy(descStr, description);
+		strcat(descStr, ", streamed by the LIVE555 Media Server");
+		// 这里只是简单的构建了 ServerMediaSession 环境，具体的媒体信息需要在后面更加具体的子类中去处理
+		*sms = ServerMediaSession::createNew(env, fileName, fileName, descStr);
+	} while(0);
+}
+
 static ServerMediaSession* createNewSMS(UsageEnvironment& env,
 	char const* fileName, FILE* /*fid*/) {
 		// Use the file name extension to determine the type of "ServerMediaSession":
@@ -130,7 +142,11 @@ static ServerMediaSession* createNewSMS(UsageEnvironment& env,
 		if (strcmp(extension, ".aac") == 0) {
 			// Assumed to be an AAC Audio (ADTS format) file:
 			// 假定为AAC音频文件（ADTS结构）
-			NEW_SMS("AAC Audio");
+			//NEW_SMS("AAC Audio");
+			func_NEW_SMS(&sms, "AAC Audio", env, fileName);
+
+			// ADTSAudioFileServerMediaSubsession::createNew() 函数里面提取了音频文件的采样率、声道数、码率等信息
+			// 然后将相关信息设置到sms中
 			sms->addSubsession(ADTSAudioFileServerMediaSubsession::createNew(env, fileName, reuseSource));
 		} else if (strcmp(extension, ".amr") == 0) {
 			// Assumed to be an AMR Audio file:
@@ -156,7 +172,8 @@ static ServerMediaSession* createNewSMS(UsageEnvironment& env,
 			sms->addSubsession(H265VideoFileServerMediaSubsession::createNew(env, fileName, reuseSource));
 		} else if (strcmp(extension, ".mp3") == 0) {
 			// Assumed to be a MPEG-1 or 2 Audio file:
-			NEW_SMS("MPEG-1 or 2 Audio");
+			//NEW_SMS("MPEG-1 or 2 Audio");
+			func_NEW_SMS(&sms, "MPEG-1 or 2 Audio", env, fileName);
 			// To stream using 'ADUs' rather than raw MP3 frames, uncomment the following:
 			//#define STREAM_USING_ADUS 1
 			// To also reorder ADUs before streaming, uncomment the following:
@@ -200,7 +217,8 @@ static ServerMediaSession* createNewSMS(UsageEnvironment& env,
 			delete[] indexFileName;
 		} else if (strcmp(extension, ".wav") == 0) {
 			// Assumed to be a WAV Audio file:
-			NEW_SMS("WAV Audio Stream");
+			//NEW_SMS("WAV Audio Stream");
+			func_NEW_SMS(&sms, "WAV Audio Stream", env, fileName);
 			// To convert 16-bit PCM data to 8-bit u-law, prior to streaming,
 			// change the following to True:
 			Boolean convertToULaw = False;
@@ -215,10 +233,13 @@ static ServerMediaSession* createNewSMS(UsageEnvironment& env,
 		} else if (strcmp(extension, ".mkv") == 0 || strcmp(extension, ".webm") == 0) {
 			// Assumed to be a Matroska file (note that WebM ('.webm') files are also Matroska files)
 			OutPacketBuffer::maxSize = 100000; // allow for some possibly large VP8 or VP9 frames
-			NEW_SMS("Matroska video+audio+(optional)subtitles");
+			//NEW_SMS("Matroska video+audio+(optional)subtitles");
+			func_NEW_SMS(&sms, "Matroska video+audio+(optional)subtitles", env, fileName);
 
 			// Create a Matroska file server demultiplexor for the specified file.
 			// (We enter the event loop to wait for this to complete.)
+			// 为指定的文件创建一个Matroska文件服务解复用器
+			// 我们进入事件循环，来等待这个过程完成
 			MatroskaDemuxCreationState creationState;
 			creationState.watchVariable = 0;
 			MatroskaFileServerDemux::createNew(env, fileName, onMatroskaDemuxCreation, &creationState);
